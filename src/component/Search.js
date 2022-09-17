@@ -1,18 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
-export default function Search () {
-    const [userInput, setUserInput] = useState('')
-    const [searchQuery, setSearchQuery] = useState('')
-  
-    const onClick = (e) => {
-        e.preventDefault();
-        setSearchQuery(userInput)
-        console.log('')
-    }
 
-    const onChange = (e) => {
-        setUserInput(e.target.value)
-    }
+export default function Search ({userInput, onChange,onClick}) {
+
   return (
       <>
         <input 

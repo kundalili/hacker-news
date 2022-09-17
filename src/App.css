@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+p {
+  margin: 0;
+}
+.hack-item {
+  background: #dddddd;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
+.hack-title {
+  font-size: 20px;
+  font-weight: bold;
+}
