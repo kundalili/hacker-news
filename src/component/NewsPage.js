@@ -1,25 +1,14 @@
-// import React from 'react'
-// import { useEffect, setAuthor } from 'react'
+import React from 'react'
+import { useEffect } from 'react'
 
-// export default function NewsPage() {
-//   return (
-//     useEffect(() => {
-//         async function getData() {
-//           try {
-          
-//             const result = await fetch(`http://hn.algolia.com/api/v1/users/${authorname}`)
-            
-//             const data = await result.json()
-//             console.log("🚀 ~ data", data.url)
+export default function NewsPage({value}) {
+  console.log(value)
+    useEffect(() => {
+        window.location.replace(value);
+  }, [])
+return <h3>Redirecting...</h3> 
+
+
+
       
-//             setAuthor(data)
-            
-//           } catch (error) {
-//             console.log('This is a wrong path')
-            
-//           }
-//         }
-//         getData()
-//       },[])
-//   )
-// }
+}
