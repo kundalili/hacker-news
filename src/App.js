@@ -63,26 +63,30 @@ const onChange = (e) => {
 //console.log(isLoading)
 
   return (
-    <div>
+    <div className='flex justify-center items-center flex-col'>
         <Search 
       value={userInput} 
-      onChange={onChange} onClick={onClick}
+      onChange={onChange} 
+      onClick={onClick}
+
       />
       {(promiseInProgress === true)  ? <Spinner />: null }
-      {news.length? news.map((item, key) => <div key={key} className="hack-item">
+      {news.length? news.map((item, key) => <div
+       key={key} 
+       className="hack-item w-[550px] bg-red-200">
         
-        <Link
+         <Link
           to={`{}`} 
           className="hack-title">
           {item.title}
-        </Link>
-        
+        </Link> 
+        <br/>
         <Link 
           to={`/author/${item.author}`}  
           authorData={item.author}
-          className="hack-author">{item.author}
+          className="hack-author underline hover:text-red-700">{item.author}
         </Link>
-        </div>): <div>No result</div>}
+        </div>): <div className="noResult">No result</div>}
    
           
     </div>
