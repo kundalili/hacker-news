@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthorPage from './component/AuthorPage';
+import NewsPage from "./component/NewsPage"
+
 
 
 
@@ -15,6 +17,8 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}/>
       <Route path="/author/:authorname" element={<AuthorPage />}/>
+      <Route path='/external-link' element={<NewsPage />} />
+      
     </Routes>
     </BrowserRouter>
   </React.StrictMode>

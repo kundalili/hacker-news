@@ -76,9 +76,12 @@ const onChange = (e) => {
        className="hack-item w-[550px] bg-red-200">
         
          <Link
-          to={`{}`} 
-          className="hack-title">
+          to="/external-link"
+          target="_blank"
+          className="hack-title"
+          value={item.url}>
           {item.title}
+          
         </Link> 
         <br/>
         <Link 
