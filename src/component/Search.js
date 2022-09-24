@@ -6,7 +6,7 @@ export default function Search ({userInput, onChange,onClick}) {
       <>
         <input 
         placeholder='Search' 
-        className='h-[40px] w-[200px] gap-[20px]' 
+        className='h-[40px] w-[200px] gap-[20px]bg-red-600' 
         onChange={onChange} 
         value={userInput}>
         </input>
