@@ -19,6 +19,7 @@ function AuthorPage({authorData}) {
             
             const data = await result.json()
             console.log("🚀 ~ data", data.username)
+            // console.log('url:', data.url)
       
             setAuthor(data)
             

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import {useParams, Link} from "react-router-dom"
 import Spinner from './component/Spinner';
 import { usePromiseTracker, trackPromise } from "react-promise-tracker";
+import NewsPage from './component/NewsPage'
 
 function App() {
 
@@ -70,7 +71,12 @@ const onChange = (e) => {
       {(promiseInProgress === true)  ? <Spinner />: null }
       {news.length? news.map((item, key) => <div key={key} className="hack-item">
         
-        <Link className="hack-title">{item.title}</Link>
+        <Link
+          to={`{}`} 
+          className="hack-title">
+          {item.title}
+        </Link>
+        
         <Link 
           to={`/author/${item.author}`}  
           authorData={item.author}
