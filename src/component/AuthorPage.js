@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect, useState} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
-function AuthorPage({authorData}) {
+function AuthorPage({authordata}) {
     const [author, setAuthor] = useState('')
     const navigate = useNavigate()
    
