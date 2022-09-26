@@ -24,7 +24,7 @@ function App() {
       try {
       
         const result = await fetch(`http://hn.algolia.com/api/v1/search?query=${searchQuery}`)
-        
+        console.log(result)
         const data = await result.json()
         // console.log("🚀 ~ data", data.hits[0].title)
         
@@ -71,27 +71,31 @@ const onChange = (e) => {
 
       />
       {(promiseInProgress === true)  ? <Spinner />: null }
-      {news.length? news.map((item, key) => <div
-       key={key} 
-       className="hack-item w-[550px] bg-red-200">
-        
-         <Link
-          to="/external-link"
-          target="_blank"
-          className="hack-title"
-          value={item.url}>
-          {item.title}
-          
-        </Link> 
-        <br/>
-        <Link 
-          to={`/author/${item.author}`}  
-          authorData={item.author}
-          className="hack-author underline hover:text-red-700">{item.author}
-        </Link>
-        </div>): <div className="noResult">No result</div>}
-   
-          
+      {news.length? news.map((item, key) => { 
+        if(item.url){
+          return (
+          <div
+            key={key} 
+            className="hack-item w-[550px] bg-red-200">
+           <a
+             href={item.url}
+             target="_blank"
+             rel="noreferrer"
+             className="hack-title">
+             {item.title || item.story_title}
+           </a> 
+           <br/>
+           <Link 
+             to={`/author/${item.author}`}  
+             authordata={item.author}
+             className="hack-author underline hover:text-red-700">{item.author}
+           </Link>
+           </div>
+           )
+        } else {
+          return null
+        }
+       }): <div className="noResult">No result</div>}
     </div>
   );
 }
